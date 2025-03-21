@@ -64,9 +64,10 @@ Si tienes dudas o sugerencias, no dudes en escribirme.
 ## Capturas de Pantalla
 
 ### Pantalla de Inicio
-![Pantalla de Inicio](img/Captura de pantalla 2025-03-20 224128.png)
+![Pantalla de Inicio](img/Captura_de_pantalla_2025-03-20_224128.png)
 
 ### Gestión de Mascotas
-![Gestión de Mascotas](img/Captura de pantalla 2025-03-20 224139.png)
-![Gestión de Mascotas](img/Captura de pantalla 2025-03-20 224209.png)
+![Gestión de Mascotas](img/Captura_de_pantalla_2025-03-20_224139.png) 
+![Gestión de Mascotas](img/Captura_de_pantalla_2025-03-20_224209.png)
+
 
