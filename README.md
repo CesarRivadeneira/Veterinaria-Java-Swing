@@ -69,7 +69,7 @@ Si tienes dudas o sugerencias, no dudes en escribirme.
 
 
 ### Gestión de Mascotas
-![Gestión de Mascotas]( src/main/resourses/img/Captura_de_pantalla_2025-03-20_224139.png ) 
-![Gestión de Mascotas]( src/main/resourses/img/Captura_de_pantalla_2025-03-20_224209.png )
+![Gestión de Mascotas]( src/main/resources/img/Captura_de_pantalla_2025-03-20_224139.png ) 
+![Gestión de Mascotas]( src/main/resources/img/Captura_de_pantalla_2025-03-20_224209.png )
 
 
