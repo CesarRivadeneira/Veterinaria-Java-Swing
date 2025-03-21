@@ -60,3 +60,14 @@ Si deseas contribuir, crea un fork del repositorio, haz tus modificaciones y env
 Contacto
 
 Si tienes dudas o sugerencias, no dudes en escribirme.
+
+## Capturas de Pantalla
+
+### Pantalla de Inicio
+![Pantalla de Inicio](img/Captura_de_pantalla_2025-03-20_224128.png)
+
+### Gestión de Mascotas
+![Gestión de Mascotas](img/Captura_de_pantalla_2025-03-20_224139.png) 
+![Gestión de Mascotas](img/Captura_de_pantalla_2025-03-20_224209.png)
+
+
