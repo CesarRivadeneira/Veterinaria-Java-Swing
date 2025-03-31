@@ -41,6 +41,8 @@ public class VerDatos extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         volverbtn = new javax.swing.JButton();
+        btnEliminarrTurno = new javax.swing.JButton();
+        btnCargarTurno = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -95,6 +97,20 @@ public class VerDatos extends javax.swing.JFrame {
             }
         });
 
+        btnEliminarrTurno.setText("Eliminar Turno");
+        btnEliminarrTurno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarrTurnoActionPerformed(evt);
+            }
+        });
+
+        btnCargarTurno.setText("Cargar Turno");
+        btnCargarTurno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarTurnoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -107,10 +123,12 @@ public class VerDatos extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCargarTurno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEliminarrTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(volverbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -125,10 +143,14 @@ public class VerDatos extends javax.swing.JFrame {
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCargarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarrTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(volverbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -156,7 +178,7 @@ public class VerDatos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
@@ -194,21 +216,44 @@ public class VerDatos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
+        // controlo que la tabla no este vacia:
+        if (tablaMascotas.getRowCount()>0){
+        
+        
+            if (tablaMascotas.getSelectedRow()!=-1){
+            int idMascota = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
+            ModificarDatos pantallaModif = new ModificarDatos(idMascota);
+            pantallaModif.setVisible(true);
+            pantallaModif.setLocationRelativeTo(null);
+   
+            cargarTabla();
+            }else {
+            mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");
+            }
+            
+        }else {
+                mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");       
+                   }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (tablaMascotas.getSelectedRow()!=-1){
-        int idMascota = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
-        control.borrarMascota(idMascota);
+      // controlo que la tabla no este vacia:
+        if (tablaMascotas.getRowCount()>0){
         
         
-        
-       mostrarMensaje("Mascota eliminada correctamente", "info", "Borrado de mascota");
-       cargarTabla();
+            if (tablaMascotas.getSelectedRow()!=-1){
+            int idMascota = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
+            control.borrarMascota(idMascota);
+   
+            mostrarMensaje("Mascota eliminada correctamente", "info", "Borrado de mascota");
+            cargarTabla();
+            }else {
+            mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");
+            }
+            
         }else {
-        mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");
-        }
+                mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");       
+                   }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -220,6 +265,14 @@ public class VerDatos extends javax.swing.JFrame {
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null); // TODO add your handling code here:
     }//GEN-LAST:event_volverbtnActionPerformed
+
+    private void btnEliminarrTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarrTurnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarrTurnoActionPerformed
+
+    private void btnCargarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarTurnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCargarTurnoActionPerformed
 
   public void mostrarMensaje(String mensaje, String titulo, String tipo){
      JOptionPane optionPane= new JOptionPane(mensaje);
@@ -236,8 +289,10 @@ public class VerDatos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCargarTurno;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarrTurno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -258,7 +313,7 @@ public class VerDatos extends javax.swing.JFrame {
     };
        // establecemos los nombres de las columnas
    
-       String titulos[] = {"idMascota", "Nombre", "Raza", "Alergico","atEspecial", "Color", "Observaciones"};
+       String titulos[] = {"idMascota", "Nombre", "Raza", "Alergico","atEspecial", "Color", "Observaciones", "Duenio", "Celular Duenio"};
        tabla.setColumnIdentifiers(titulos);
        
        //traigo los datos de la mascota desde la controladora
@@ -272,7 +327,9 @@ public class VerDatos extends javax.swing.JFrame {
            Object[] objeto= {masco.getIdMascota(), masco.getNombre(), 
                masco.getRaza(), masco.getColor(),
                 masco.isAlergia(),
-               masco.isAtEspecial(), masco.getObservaciones() };
+               masco.isAtEspecial(), masco.getObservaciones(), 
+               masco.getDuenio().getNombre(),
+               masco.getDuenio().getCelular()};
            tabla.addRow(objeto);
            }
        }

@@ -5,6 +5,7 @@
 package org.example.logica;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class Mascota {
     private String Observaciones;
     private String Color;
     
-    @OneToOne
+    @OneToOne(mappedBy = "mascota", cascade = CascadeType.ALL)
     private Duenio duenio;
 
     public Mascota() {

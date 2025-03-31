@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 
 
@@ -26,13 +28,19 @@ public class Duenio {
     
     private String Celular;
 
+    @OneToOne
+    @JoinColumn(name = "idMascota")  // Asegura que la columna tenga un nombre válido
+    private Mascota mascota;
+    
+    
     public Duenio() {
     }
 
-    public Duenio(int idDuenio, String Nombre, String Celular) {
+    public Duenio(int idDuenio, String Nombre, String Celular, Mascota mascota) {
         this.idDuenio = idDuenio;
         this.Nombre = Nombre;
         this.Celular = Celular;
+        this.mascota = mascota;
     }
 
     public int getIdDuenio() {
@@ -58,6 +66,14 @@ public class Duenio {
     public void setCelular(String Celular) {
         this.Celular = Celular;
     }
+      public Mascota getMascota() {
+        return mascota;
+    }
+
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
+    }
+    
     
     
 }

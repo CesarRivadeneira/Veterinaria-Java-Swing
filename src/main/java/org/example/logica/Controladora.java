@@ -40,6 +40,12 @@ public class Controladora {
      controlPersist.borrarMascota(idMascota);
     }
 
+  
+
+    public Mascota traerMascota(int idMascota) {
+        return controlPersist.traerMascota(idMascota) ;
+    }
+
    
     
     
