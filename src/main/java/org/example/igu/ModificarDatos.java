@@ -14,12 +14,12 @@ import org.example.logica.Mascota;
  * @author Cesar
  */
 public class ModificarDatos extends javax.swing.JFrame {
-
+ Mascota masco;
     Controladora control = null;
     int idMascota;
     
     public ModificarDatos(int idMascota) {
-        
+       
         control = new Controladora();
         //this.idMascota=idMascota;
         initComponents();
@@ -251,7 +251,7 @@ public class ModificarDatos extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         
-      /*  String nombreMasco= txtNombreMascota.getText();
+        String nombreMasco= txtNombreMascota.getText();
         String razaMasco = txtRazaMascota.getText();
         String colorMasco = txtColorMascota.getText();
         String nombreDuenio = txtNombreDuenio.getText();
@@ -260,15 +260,18 @@ public class ModificarDatos extends javax.swing.JFrame {
         String alergico = (String)cmbAlergico.getSelectedItem();
         String atencionEspecial = (String) cmbAtencionEspecial.getSelectedItem();
         
-        control.guardar(nombreMasco, razaMasco, colorMasco, nombreDuenio, celularDuenio, observacionesMasco,
-         alergico,
-         atencionEspecial);
-        
-        JOptionPane optionPane= new JOptionPane("Se guardo correctamente");
-        optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
-        JDialog dialog = optionPane.createDialog("Guardado Exitoso");
-        dialog.setAlwaysOnTop(true);
-        dialog.setVisible(true);*/
+
+       control.modificarMascota(masco, nombreMasco, razaMasco,colorMasco,observacionesMasco,alergico,atencionEspecial, nombreDuenio, celularDuenio);
+      
+      
+       mostrarMensaje("Edicion realizada correctamente","info","Edicion correcta");
+       
+       VerDatos pantalla = new VerDatos();
+       pantalla.setVisible(true);
+       pantalla.setLocationRelativeTo(null);
+       
+       this.dispose();
+      
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void VolverbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverbtnActionPerformed
@@ -319,7 +322,7 @@ public class ModificarDatos extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void cargarDatos(int idMascota) {
-       Mascota masco  = control.traerMascota(idMascota);
+       this.masco = control.traerMascota(idMascota);
        
         txtNombreMascota.setText(masco.getNombre());
         txtRazaMascota.setText(masco.getRaza());

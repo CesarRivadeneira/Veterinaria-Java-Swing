@@ -4,6 +4,7 @@
  */
 package org.example.persistence;
 
+import static com.mysql.cj.conf.PropertyKey.logger;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,10 +20,10 @@ public class ControladoraPersistencia {
     DuenioJpaController dueniojpa = new DuenioJpaController();
     MascotaJpaController mascotajpa = new MascotaJpaController();
     
-    public void guardar(Duenio duenio, Mascota masco){
+    public void guardar(Duenio duenio){
     
         dueniojpa.create(duenio);
-        mascotajpa.create(masco);
+
     }
 
     public List<Mascota> traerMascotas() {
@@ -40,5 +41,29 @@ public class ControladoraPersistencia {
 
     public Mascota traerMascota(int idMascota) {
         return mascotajpa.findMascota(idMascota);
+    }
+
+    public void modificarMascota(Mascota masco) {
+      try{
+      mascotajpa.edit( masco);
+      }catch(Exception ex){
+      Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        
+      
+    }
+
+    public Duenio traerDuenio(int idDuenio) {
+       return dueniojpa.findDuenio(idDuenio);
+       
+    }
+
+    public void modificarDuenio(Duenio dueno) {
+        try{
+        dueniojpa.edit(dueno);
+        }catch(Exception ex){
+        Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }
 }

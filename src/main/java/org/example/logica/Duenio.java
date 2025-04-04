@@ -5,11 +5,15 @@
 package org.example.logica;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 
@@ -28,19 +32,19 @@ public class Duenio {
     
     private String Celular;
 
-    @OneToOne
-    @JoinColumn(name = "idMascota")  // Asegura que la columna tenga un nombre válido
-    private Mascota mascota;
+     @OneToMany(mappedBy = "duenio", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Mascota> mascotas = new ArrayList<>();
+
     
     
     public Duenio() {
     }
 
-    public Duenio(int idDuenio, String Nombre, String Celular, Mascota mascota) {
+    public Duenio(int idDuenio, String Nombre, String Celular, List<Mascota> mascota) {
         this.idDuenio = idDuenio;
         this.Nombre = Nombre;
         this.Celular = Celular;
-        this.mascota = mascota;
+        
     }
 
     public int getIdDuenio() {
@@ -66,13 +70,15 @@ public class Duenio {
     public void setCelular(String Celular) {
         this.Celular = Celular;
     }
-      public Mascota getMascota() {
-        return mascota;
-    }
+   
+public List<Mascota> getMascotas() {
+    return mascotas;
+}
 
-    public void setMascota(Mascota mascota) {
-        this.mascota = mascota;
-    }
+public void setMascotas(List<Mascota> mascotas) {
+    this.mascotas = mascotas;
+}
+  
     
     
     

@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 
@@ -32,7 +34,9 @@ public class Mascota {
     private String Observaciones;
     private String Color;
     
-    @OneToOne(mappedBy = "mascota", cascade = CascadeType.ALL)
+  
+    @ManyToOne
+    @JoinColumn(name = "duenio_idDuenio") // Esta clave foránea está en la tabla Mascota
     private Duenio duenio;
 
     public Mascota() {
