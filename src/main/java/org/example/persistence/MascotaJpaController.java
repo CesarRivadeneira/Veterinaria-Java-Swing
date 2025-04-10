@@ -13,6 +13,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import org.example.logica.Duenio;
 import org.example.logica.Mascota;
 import org.example.persistence.exceptions.NonexistentEntityException;
 
@@ -138,5 +139,6 @@ public class MascotaJpaController implements Serializable {
             em.close();
         }
     }
+
     
 }

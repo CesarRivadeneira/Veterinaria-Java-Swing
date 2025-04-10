@@ -7,6 +7,7 @@ package org.example.igu;
 
 
 
+import java.awt.Color;
 import java.util.List;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -14,13 +15,14 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import org.example.logica.Controladora;
+import org.example.logica.Duenio;
 import org.example.logica.Mascota;
 
 
-public class VerDatos extends javax.swing.JFrame {
+public class ListadoDuenios extends javax.swing.JFrame {
     Controladora control = null;
    
-    public VerDatos() {
+    public ListadoDuenios() {
         control = new Controladora();
         initComponents();
     }
@@ -38,8 +40,7 @@ public class VerDatos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaMascotas = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
+        tablaDuenios = new javax.swing.JTable();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         volverbtn = new javax.swing.JButton();
@@ -58,10 +59,10 @@ public class VerDatos extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Eras Bold ITC", 0, 36)); // NOI18N
-        jLabel1.setText("Visualizacion de Datos");
+        jLabel1.setText("Listado de Dueños");
 
-        tablaMascotas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        tablaMascotas.setModel(new javax.swing.table.DefaultTableModel(
+        tablaDuenios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tablaDuenios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -72,10 +73,7 @@ public class VerDatos extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(tablaMascotas);
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Datos de Mascotas:");
+        jScrollPane1.setViewportView(tablaDuenios);
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconeditar.png"))); // NOI18N
         btnEditar.setText("  Editar");
@@ -115,7 +113,7 @@ public class VerDatos extends javax.swing.JFrame {
             }
         });
 
-        buscador.setText("Buscar Mascota o Dueño");
+        buscador.setText("Buscar Dueño");
         buscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscadorActionPerformed(evt);
@@ -137,11 +135,10 @@ public class VerDatos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(119, 119, 119)
-                        .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar)
+                        .addGap(53, 53, 53)
+                        .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,7 +156,6 @@ public class VerDatos extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
                     .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addGap(30, 30, 30)
@@ -242,48 +238,69 @@ public class VerDatos extends javax.swing.JFrame {
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // controlo que la tabla no este vacia:
-        if (tablaMascotas.getRowCount()>0){
+        if (tablaDuenios.getRowCount()>0){
         
         
-            if (tablaMascotas.getSelectedRow()!=-1){
-            int idMascota = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
-            ModificarDatos pantallaModif = new ModificarDatos(idMascota);
+            if (tablaDuenios.getSelectedRow()!=-1){
+            int idDuenio = Integer.parseInt(String.valueOf(tablaDuenios.getValueAt(tablaDuenios.getSelectedRow(), 0)));
+            ModificarDatosDuenio pantallaModif = new ModificarDatosDuenio(idDuenio);
             pantallaModif.setVisible(true);
             pantallaModif.setLocationRelativeTo(null);
             this.dispose();
             cargarTabla();
             }else {
-            mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");
+            mostrarMensaje("No selecciono ningun dueño","error","Error al eliminar");
             }
             
         }else {
-                mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");       
+                mostrarMensaje("No selecciono ningun dueño","error","Error al eliminar");       
                    }
        
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
       // controlo que la tabla no este vacia:
-        if (tablaMascotas.getRowCount()>0){
+        if (tablaDuenios.getRowCount()>0){
         
         
-            if (tablaMascotas.getSelectedRow()!=-1){
-            int idMascota = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
-            control.borrarMascota(idMascota);
+            if (tablaDuenios.getSelectedRow()!=-1){
+            int idDuenio = Integer.parseInt(String.valueOf(tablaDuenios.getValueAt(tablaDuenios.getSelectedRow(), 0)));
+            control.borrarDuenio(idDuenio);
    
-            mostrarMensaje("Mascota eliminada correctamente", "info", "Borrado de mascota");
+            mostrarMensaje("Dueño eliminado correctamente", "info", "Borrado de Dueño");
             cargarTabla();
             }else {
-            mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");
+            mostrarMensaje("No selecciono ningun Dueño","error","Error al eliminar");
             }
             
         }else {
-                mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");       
+                mostrarMensaje("No selecciono ningun Dueño","error","Error al eliminar");       
                    }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
        cargarTabla(); 
+       buscador.setText("Buscar dueño");
+buscador.setForeground(Color.GRAY);
+
+buscador.addFocusListener(new java.awt.event.FocusAdapter() {
+    @Override
+    public void focusGained(java.awt.event.FocusEvent evt) {
+        if (buscador.getText().equals("Buscar dueño")) {
+            buscador.setText("");
+            buscador.setForeground(Color.BLACK);
+        }
+    }
+
+    @Override
+    public void focusLost(java.awt.event.FocusEvent evt) {
+        if (buscador.getText().trim().isEmpty()) {
+            buscador.setText("Buscar dueño");
+            buscador.setForeground(Color.GRAY);
+        }
+    }
+});
+
     }//GEN-LAST:event_formWindowOpened
 
     private void volverbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverbtnActionPerformed
@@ -311,9 +328,9 @@ public class VerDatos extends javax.swing.JFrame {
     
     private void filtrarTabla() {
     String textoBusqueda = buscador.getText().trim().toLowerCase();
-    DefaultTableModel modelo = (DefaultTableModel) tablaMascotas.getModel();
+    DefaultTableModel modelo = (DefaultTableModel) tablaDuenios.getModel();
     TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(modelo);
-    tablaMascotas.setRowSorter(sorter);
+    tablaDuenios.setRowSorter(sorter);
 
     if (textoBusqueda.length() == 0) {
         sorter.setRowFilter(null); // Muestra todo si la búsqueda está vacía
@@ -344,13 +361,12 @@ public class VerDatos extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarrTurno;
     private javax.swing.JTextField buscador;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaMascotas;
+    private javax.swing.JTable tablaDuenios;
     private javax.swing.JButton volverbtn;
     // End of variables declaration//GEN-END:variables
 
@@ -362,29 +378,23 @@ public class VerDatos extends javax.swing.JFrame {
         }
     };
 
-    String titulos[] = {"idMascota", "Nombre", "Raza", "Color", "Alergia", "atEspecial", "Observaciones", "Duenio", "Celular Duenio"};
+    String titulos[] = {"idDueño", "Nombre", "Telefono"};
     tabla.setColumnIdentifiers(titulos);
 
     // Traer los datos de las mascotas desde la controladora
-    List<Mascota> listaMascotas = control.traerMascotas();
+    List<Duenio> listaDuenios = control.traerDuenios();
 
-    if (listaMascotas != null) {
-        for (Mascota masco : listaMascotas) {
+    if (listaDuenios != null) {
+        for (Duenio dueni : listaDuenios) {
             Object[] objeto = {
-                masco.getIdMascota(),
-                masco.getNombre(),
-                masco.getRaza(),
-                masco.getColor(),
-                masco.isAlergia(),
-                masco.isAtEspecial(),
-                masco.getObservaciones(),
-                masco.getDuenio() != null ? masco.getDuenio().getNombre() : "Sin dueño",  // Verificar si el dueño es null
-                masco.getDuenio() != null ? masco.getDuenio().getCelular() : "Sin celular"  // Verificar si el dueño es null
+                dueni.getIdDuenio(),
+                dueni.getNombre(),
+                dueni.getCelular(),
             };
             tabla.addRow(objeto);
         }
     }
-    tablaMascotas.setModel(tabla);
+    tablaDuenios.setModel(tabla);
 }
 
 

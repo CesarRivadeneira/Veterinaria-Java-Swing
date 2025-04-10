@@ -79,13 +79,37 @@ public void guardar(String nombreMasco, String razaMasco, String colorMasco,
         this.modificarDuenio(dueno);
         
     }
-    private void modificarDuenio(Duenio dueno){
+    private void modificarDuenio(Duenio dueno){  
      controlPersist.modificarDuenio(dueno);
+    }
+    
+    public void modificarDuenio2(Duenio dueni, String nombreDuenio, String celularDuenio ) {
+      
+        
+        dueni.setNombre(nombreDuenio);
+        dueni.setCelular(celularDuenio);
+        
+        controlPersist.modificarDuenio2(dueni);
+       
+        
     }
 
     private Duenio buscarDuenio(int idDuenio){
         return controlPersist.traerDuenio(idDuenio);  
    }
+
+    public List<Duenio> traerDuenios() {
+        return controlPersist.traerDuenios();
+    }
+
+    public void borrarDuenio(int idDuenio) {
+      controlPersist.borrarMascota(idDuenio);
+    }
+    
+    public Duenio traerDuenio(int idDuenio) {
+        return controlPersist.traerDuenio(idDuenio) ;
+    }
+
     
     
 }

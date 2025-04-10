@@ -7,23 +7,24 @@ package org.example.igu;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import org.example.logica.Controladora;
+import org.example.logica.Duenio;
 import org.example.logica.Mascota;
 
 /**
  *
  * @author Cesar
  */
-public class ModificarDatos extends javax.swing.JFrame {
- Mascota masco;
+public class ModificarDatosDuenio extends javax.swing.JFrame {
+    Duenio dueni;
     Controladora control = null;
-    int idMascota;
+    int idDuenio;
     
-    public ModificarDatos(int idMascota) {
+    public ModificarDatosDuenio(int idDuenio) {
        
         control = new Controladora();
         //this.idMascota=idMascota;
         initComponents();
-        cargarDatos(idMascota);
+        cargarDatos(idDuenio);
         //control controladora puede estar aca tambien
     }
 
@@ -39,22 +40,9 @@ public class ModificarDatos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtNombreMascota = new javax.swing.JTextField();
         txtNombreDuenio = new javax.swing.JTextField();
         txtCelularDuenio = new javax.swing.JTextField();
-        txtColorMascota = new javax.swing.JTextField();
-        cmbAtencionEspecial = new javax.swing.JComboBox<>();
-        txtRazaMascota = new javax.swing.JTextField();
-        cmbAlergico = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtObservacionesMascota = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -66,27 +54,7 @@ public class ModificarDatos extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre ");
 
-        jLabel3.setText("Raza");
-
-        jLabel4.setText("Color ");
-
-        jLabel5.setText("Alergico");
-
-        jLabel6.setText("Nombre del Dueño");
-
         jLabel7.setText("Cel Dueño");
-
-        jLabel8.setText("Observaciones");
-
-        jLabel9.setText("Atencion Especial");
-
-        cmbAtencionEspecial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO", "" }));
-
-        cmbAlergico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
-
-        txtObservacionesMascota.setColumns(20);
-        txtObservacionesMascota.setRows(5);
-        jScrollPane1.setViewportView(txtObservacionesMascota);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -95,34 +63,13 @@ public class ModificarDatos extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel8))
-                                .addGap(64, 64, 64)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombreDuenio)
-                                    .addComponent(txtCelularDuenio)
-                                    .addComponent(txtNombreMascota)
-                                    .addComponent(txtRazaMascota)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cmbAlergico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cmbAtencionEspecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(txtColorMascota))))
-                        .addGap(53, 53, 53))))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel7))
+                .addGap(86, 86, 86)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCelularDuenio, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                    .addComponent(txtNombreDuenio))
+                .addGap(53, 53, 53))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,36 +77,12 @@ public class ModificarDatos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRazaMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtColorMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(cmbAtencionEspecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(cmbAlergico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
                     .addComponent(txtNombreDuenio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(txtCelularDuenio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Eras Bold ITC", 0, 36)); // NOI18N
@@ -218,7 +141,7 @@ public class ModificarDatos extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(Volverbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,34 +162,25 @@ public class ModificarDatos extends javax.swing.JFrame {
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
      
-        txtNombreMascota.setText("");
-        txtRazaMascota.setText("");
-        txtColorMascota.setText("");
-        cmbAlergico.setSelectedIndex(0);
-        cmbAtencionEspecial.setSelectedIndex(0);
         txtNombreDuenio.setText("");
         txtCelularDuenio.setText("");
-        txtObservacionesMascota.setText("");
+       
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         
-        String nombreMasco= txtNombreMascota.getText();
-        String razaMasco = txtRazaMascota.getText();
-        String colorMasco = txtColorMascota.getText();
-        String nombreDuenio = txtNombreDuenio.getText();
+        String nombreDuenio= txtNombreDuenio.getText();
+        
         String celularDuenio = txtCelularDuenio.getText();
-        String observacionesMasco = txtObservacionesMascota.getText();
-        String alergico = (String)cmbAlergico.getSelectedItem();
-        String atencionEspecial = (String) cmbAtencionEspecial.getSelectedItem();
+        
         
 
-       control.modificarMascota(masco, nombreMasco, razaMasco,colorMasco,observacionesMasco,alergico,atencionEspecial, nombreDuenio, celularDuenio);
+       control.modificarDuenio2(dueni, nombreDuenio, celularDuenio);
       
       
        mostrarMensaje("Edicion realizada correctamente","info","Edicion correcta");
        
-       ListadoMascotas pantalla = new ListadoMascotas();
+       ListadoDuenios pantalla = new ListadoDuenios();
        pantalla.setVisible(true);
        pantalla.setLocationRelativeTo(null);
        
@@ -299,52 +213,21 @@ public class ModificarDatos extends javax.swing.JFrame {
     private javax.swing.JButton Volverbtn;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> cmbAlergico;
-    private javax.swing.JComboBox<String> cmbAtencionEspecial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCelularDuenio;
-    private javax.swing.JTextField txtColorMascota;
     private javax.swing.JTextField txtNombreDuenio;
-    private javax.swing.JTextField txtNombreMascota;
-    private javax.swing.JTextArea txtObservacionesMascota;
-    private javax.swing.JTextField txtRazaMascota;
     // End of variables declaration//GEN-END:variables
 
-    private void cargarDatos(int idMascota) {
-       this.masco = control.traerMascota(idMascota);
-       
-        txtNombreMascota.setText(masco.getNombre());
-        txtRazaMascota.setText(masco.getRaza());
-        txtColorMascota.setText(masco.getColor());
+    private void cargarDatos(int idDuenio) {
+       this.dueni = control.traerDuenio(idDuenio);
         
-        if(masco.isAlergia().equals("Si")){
-        cmbAlergico.setSelectedIndex(1);
-        }else{
-        if (masco.isAlergia().equals("No")){
-        cmbAlergico.setSelectedIndex(2);
-        }}
+        txtNombreDuenio.setText(dueni.getNombre());
+        txtCelularDuenio.setText(dueni.getCelular());
         
-          if(masco.isAtEspecial().equals("Si")){
-        cmbAtencionEspecial.setSelectedIndex(1);
-        }else{
-        if (masco.isAtEspecial().equals("No")){
-        cmbAtencionEspecial.setSelectedIndex(2);
-        }}
-        
-        txtNombreDuenio.setText(masco.getDuenio().getNombre());
-        txtCelularDuenio.setText(masco.getDuenio().getCelular());
-        txtObservacionesMascota.setText(masco.getObservaciones());
     }
 
    

@@ -66,4 +66,19 @@ public class ControladoraPersistencia {
         }
        
     }
+
+    public List<Duenio> traerDuenios() {
+       return dueniojpa.findDuenioEntities();
+
+    }
+
+    public void modificarDuenio2(Duenio dueni) {
+        try{
+        dueniojpa.edit(dueni);
+        }catch(Exception ex){
+        Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+   
 }
