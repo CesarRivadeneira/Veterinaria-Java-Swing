@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>org.example.logica.Duenio</class>
     <class>org.example.logica.Mascota</class>
+    <class>org.example.logica.Consulta</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/veterinaria"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

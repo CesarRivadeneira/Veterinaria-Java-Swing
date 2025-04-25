@@ -1,0 +1,141 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package org.example.persistence;
+
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import org.example.logica.Consulta;
+import org.example.logica.Duenio;
+import org.example.persistence.exceptions.NonexistentEntityException;
+
+/**
+ *
+ * @author Cesar
+ */
+ public class ConsultaJpaController implements Serializable {
+        public ConsultaJpaController(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+    private EntityManagerFactory emf = null;
+    
+    public ConsultaJpaController() {
+        emf = Persistence.createEntityManagerFactory("VeterinariaPU");
+    }
+
+    public EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
+
+    public void create(Consulta consulta) {
+        EntityManager em = null;
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            em.persist(consulta);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    public void edit(Consulta consulta) throws NonexistentEntityException, Exception {
+        EntityManager em = null;
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            consulta = em.merge(consulta);
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            String msg = ex.getLocalizedMessage();
+            if (msg == null || msg.length() == 0) {
+                int id = consulta.getIdConsulta();
+                if (findConsulta(id) == null) {
+                    throw new NonexistentEntityException("The consulta with id " + id + " no longer exists.");
+                }
+            }
+            throw ex;
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    public void destroy(int id) throws NonexistentEntityException {
+        EntityManager em = null;
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            Duenio duenio;
+            try {
+                duenio = em.getReference(Duenio.class, id);
+                duenio.getIdDuenio();
+            } catch (EntityNotFoundException enfe) {
+                throw new NonexistentEntityException("The consulta with id " + id + " no longer exists.", enfe);
+            }
+            em.remove(duenio);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    public List<Consulta> findConsultaEntities() {
+        return findConsultaEntities(true, -1, -1);
+    }
+
+    public List<Consulta> findConsultaEntities(int maxResults, int firstResult) {
+        return findConsultaEntities(false, maxResults, firstResult);
+    }
+
+    private List<Consulta> findConsultaEntities(boolean all, int maxResults, int firstResult) {
+        EntityManager em = getEntityManager();
+        try {
+            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+            cq.select(cq.from(Duenio.class));
+            Query q = em.createQuery(cq);
+            if (!all) {
+                q.setMaxResults(maxResults);
+                q.setFirstResult(firstResult);
+            }
+            return q.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Duenio findConsulta(int id) {
+        EntityManager em = getEntityManager();
+        try {
+            return em.find(Duenio.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
+    public int getConsultaCount() {
+        EntityManager em = getEntityManager();
+        try {
+            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+            Root<Consulta> rt = cq.from(Consulta.class);
+            cq.select(em.getCriteriaBuilder().count(rt));
+            Query q = em.createQuery(cq);
+            return ((Long) q.getSingleResult()).intValue();
+        } finally {
+            em.close();
+        }
+    }
+}

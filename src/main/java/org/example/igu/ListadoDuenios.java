@@ -306,7 +306,8 @@ buscador.addFocusListener(new java.awt.event.FocusAdapter() {
     private void volverbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverbtnActionPerformed
         Principal pantalla = new Principal();
         pantalla.setVisible(true);
-        pantalla.setLocationRelativeTo(null); // TODO add your handling code here:
+        pantalla.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_volverbtnActionPerformed
 
     private void btnEliminarrTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarrTurnoActionPerformed

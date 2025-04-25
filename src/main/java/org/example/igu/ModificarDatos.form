@@ -25,13 +25,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" pref="814" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="69" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" pref="527" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="579" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -49,7 +49,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnLimpiar" pref="167" max="32767" attributes="0"/>
                       <Component id="btnGuardar" pref="167" max="32767" attributes="0"/>
@@ -80,7 +80,7 @@
                       </Group>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,41 +94,43 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtNombreDuenio" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtNombreMascota" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtRazaMascota" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="cmbAlergico" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane1" min="-2" pref="322" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtColorMascota" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtCelularDuenio" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtNombreDuenio" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtCelularDuenio" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtNombreMascota" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtRazaMascota" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="cmbAlergico" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane1" min="-2" pref="322" max="-2" attributes="0"/>
-                                                  <Component id="cmbAtencionEspecial" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="txtColorMascota" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="cmbAtencionEspecial" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmbEspecie" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -142,6 +144,11 @@
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNombreMascota" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cmbEspecie" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtRazaMascota" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -149,35 +156,35 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtColorMascota" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmbAtencionEspecial" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmbAlergico" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNombreDuenio" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCelularDuenio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbAtencionEspecial" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbAlergico" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtNombreDuenio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtCelularDuenio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -277,6 +284,74 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JComboBox" name="cmbEspecie">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="52">
+                    <StringItem index="0" value="AGAPORNIS  "/>
+                    <StringItem index="1" value="ALPACA  "/>
+                    <StringItem index="2" value="ANACONDA  "/>
+                    <StringItem index="3" value="AVESTRUZ  "/>
+                    <StringItem index="4" value="BOA  "/>
+                    <StringItem index="5" value="BURRO  "/>
+                    <StringItem index="6" value="CABALLO  "/>
+                    <StringItem index="7" value="CABRA  "/>
+                    <StringItem index="8" value="CAMALEON  "/>
+                    <StringItem index="9" value="CANARIO  "/>
+                    <StringItem index="10" value="CANGURO  "/>
+                    <StringItem index="11" value="CERDO  "/>
+                    <StringItem index="12" value="CHINCHILLA  "/>
+                    <StringItem index="13" value="COBAYA  "/>
+                    <StringItem index="14" value="CONEJO  "/>
+                    <StringItem index="15" value="COTORRA  "/>
+                    <StringItem index="16" value="ERIZO  "/>
+                    <StringItem index="17" value="GALLINA  "/>
+                    <StringItem index="18" value="GALLO  "/>
+                    <StringItem index="19" value="GANSO  "/>
+                    <StringItem index="20" value="GATO  "/>
+                    <StringItem index="21" value="GECKO  "/>
+                    <StringItem index="22" value="HAMSTER  "/>
+                    <StringItem index="23" value="HURON  "/>
+                    <StringItem index="24" value="IGUANA  "/>
+                    <StringItem index="25" value="KOALA  "/>
+                    <StringItem index="26" value="LAGARTIJA  "/>
+                    <StringItem index="27" value="LEON  "/>
+                    <StringItem index="28" value="LLAMA  "/>
+                    <StringItem index="29" value="LORO  "/>
+                    <StringItem index="30" value="MAPACHE  "/>
+                    <StringItem index="31" value="MONO  "/>
+                    <StringItem index="32" value="NUTRIA  "/>
+                    <StringItem index="33" value="OVEJA  "/>
+                    <StringItem index="34" value="PALOMA  "/>
+                    <StringItem index="35" value="PATO  "/>
+                    <StringItem index="36" value="PEZ_BETA  "/>
+                    <StringItem index="37" value="PEZ_DISCO  "/>
+                    <StringItem index="38" value="PEZ_DORADO  "/>
+                    <StringItem index="39" value="PEZ_PAYASO  "/>
+                    <StringItem index="40" value="PERIQUITO  "/>
+                    <StringItem index="41" value="PERRO  "/>
+                    <StringItem index="42" value="PITON  "/>
+                    <StringItem index="43" value="PONY  "/>
+                    <StringItem index="44" value="RATA  "/>
+                    <StringItem index="45" value="RATON  "/>
+                    <StringItem index="46" value="SERPIENTE  "/>
+                    <StringItem index="47" value="TIGRE  "/>
+                    <StringItem index="48" value="TORTUGA  "/>
+                    <StringItem index="49" value="VACA  "/>
+                    <StringItem index="50" value="ZORRO  "/>
+                    <StringItem index="51" value=" "/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Especie"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel1">

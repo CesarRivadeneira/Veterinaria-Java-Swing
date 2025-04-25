@@ -5,6 +5,8 @@
 package org.example.logica;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 
@@ -28,13 +31,26 @@ public class Mascota {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idMascota;
     private String Nombre;
+    private String Especie;
     private String Raza;
     private String alergia;
     private String atEspecial;
     private String Observaciones;
     private String Color;
     
-  
+    
+    @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Consulta> consultas = new ArrayList<>();
+
+    public List<Consulta> getConsultas() {
+        return consultas;
+    }
+
+    public void setConsultas(List<Consulta> consultas) {
+        this.consultas = consultas;
+    }
+    
+        
     @ManyToOne
     @JoinColumn(name = "duenio_idDuenio") // Esta clave foránea está en la tabla Mascota
     private Duenio duenio;
@@ -42,9 +58,10 @@ public class Mascota {
     public Mascota() {
     }
 
-    public Mascota(int idMascota, String Nombre, String Raza, String alergia, String atEspecial, String Observaciones, String Color, Duenio duenio) {
+    public Mascota(int idMascota, String Nombre, String Especie, String Raza, String alergia, String atEspecial, String Observaciones, String Color, Duenio duenio) {
         this.idMascota = idMascota;
         this.Nombre = Nombre;
+        this.Especie = Especie;
         this.Raza = Raza;
         this.alergia = alergia;
         this.atEspecial = atEspecial;
@@ -91,6 +108,14 @@ public class Mascota {
 
     public void setAtEspecial(String atEspecial) {
         this.atEspecial = atEspecial;
+    }
+    
+    public String isEspecie() {
+        return Especie;
+    }
+
+    public void setEspecie(String especie) {
+        this.Especie = especie;
     }
 
     public String getObservaciones() {

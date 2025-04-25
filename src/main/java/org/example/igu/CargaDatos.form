@@ -25,13 +25,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" pref="814" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="80" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" pref="527" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="570" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -52,7 +52,7 @@
                       <Component id="jLabel1" min="-2" pref="496" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnLimpiar" pref="167" max="32767" attributes="0"/>
                               <Component id="btnGuardar" pref="167" max="32767" attributes="0"/>
@@ -80,7 +80,7 @@
                       </Group>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,43 +94,29 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtNombreDuenio" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtCelularDuenio" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtNombreMascota" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtRazaMascota" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="cmbAlergico" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane1" min="-2" pref="322" max="-2" attributes="0"/>
-                                                  <Component id="cmbAtencionEspecial" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="txtColorMascota" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cmbAlergico" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="322" max="-2" attributes="0"/>
+                          <Component id="cmbAtencionEspecial" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombreMascota" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtRazaMascota" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtColorMascota" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtNombreDuenio" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtCelularDuenio" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="cmbEspecie" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="110" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -142,42 +128,47 @@
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNombreMascota" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cmbEspecie" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtRazaMascota" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtColorMascota" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cmbAtencionEspecial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cmbAlergico" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNombreDuenio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtCelularDuenio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -224,8 +215,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreMascota">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreMascotaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreDuenio">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreDuenioActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCelularDuenio">
             </Component>
@@ -277,6 +274,77 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JComboBox" name="cmbEspecie">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="52">
+                    <StringItem index="0" value="-"/>
+                    <StringItem index="1" value="AGAPORNIS  "/>
+                    <StringItem index="2" value="ALPACA  "/>
+                    <StringItem index="3" value="ANACONDA  "/>
+                    <StringItem index="4" value="AVESTRUZ  "/>
+                    <StringItem index="5" value="BOA  "/>
+                    <StringItem index="6" value="BURRO  "/>
+                    <StringItem index="7" value="CABALLO  "/>
+                    <StringItem index="8" value="CABRA  "/>
+                    <StringItem index="9" value="CAMALEON  "/>
+                    <StringItem index="10" value="CANARIO  "/>
+                    <StringItem index="11" value="CANGURO  "/>
+                    <StringItem index="12" value="CERDO  "/>
+                    <StringItem index="13" value="CHINCHILLA  "/>
+                    <StringItem index="14" value="COBAYA  "/>
+                    <StringItem index="15" value="CONEJO  "/>
+                    <StringItem index="16" value="COTORRA  "/>
+                    <StringItem index="17" value="ERIZO  "/>
+                    <StringItem index="18" value="GALLINA  "/>
+                    <StringItem index="19" value="GALLO  "/>
+                    <StringItem index="20" value="GANSO  "/>
+                    <StringItem index="21" value="GATO  "/>
+                    <StringItem index="22" value="GECKO  "/>
+                    <StringItem index="23" value="HAMSTER  "/>
+                    <StringItem index="24" value="HURON  "/>
+                    <StringItem index="25" value="IGUANA  "/>
+                    <StringItem index="26" value="KOALA  "/>
+                    <StringItem index="27" value="LAGARTIJA  "/>
+                    <StringItem index="28" value="LEON  "/>
+                    <StringItem index="29" value="LLAMA  "/>
+                    <StringItem index="30" value="LORO  "/>
+                    <StringItem index="31" value="MAPACHE  "/>
+                    <StringItem index="32" value="MONO  "/>
+                    <StringItem index="33" value="NUTRIA  "/>
+                    <StringItem index="34" value="OVEJA  "/>
+                    <StringItem index="35" value="PALOMA  "/>
+                    <StringItem index="36" value="PATO  "/>
+                    <StringItem index="37" value="PEZ_BETA  "/>
+                    <StringItem index="38" value="PEZ_DISCO  "/>
+                    <StringItem index="39" value="PEZ_DORADO  "/>
+                    <StringItem index="40" value="PEZ_PAYASO  "/>
+                    <StringItem index="41" value="PERIQUITO  "/>
+                    <StringItem index="42" value="PERRO  "/>
+                    <StringItem index="43" value="PITON  "/>
+                    <StringItem index="44" value="PONY  "/>
+                    <StringItem index="45" value="RATA  "/>
+                    <StringItem index="46" value="RATON  "/>
+                    <StringItem index="47" value="SERPIENTE  "/>
+                    <StringItem index="48" value="TIGRE  "/>
+                    <StringItem index="49" value="TORTUGA  "/>
+                    <StringItem index="50" value="VACa  "/>
+                    <StringItem index="51" value="ZORRO  "/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbEspecieActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Especie"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -284,14 +352,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Eras Bold ITC" size="36" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Carga de Datos"/>
+            <Property name="text" type="java.lang.String" value="Registrar Mascota"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnLimpiar">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Cesar\Desktop\limpiariconimagen.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="   Limpiar"/>
           </Properties>
           <Events>
@@ -300,9 +365,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnGuardar">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Cesar\Desktop\guardarpng.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="   Guardar"/>
           </Properties>
           <Events>

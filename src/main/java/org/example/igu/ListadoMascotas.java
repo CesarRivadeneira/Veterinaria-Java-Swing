@@ -40,12 +40,11 @@ public class ListadoMascotas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaMascotas = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         volverbtn = new javax.swing.JButton();
-        btnEliminarrTurno = new javax.swing.JButton();
-        btnCargarTurno = new javax.swing.JButton();
+        btnListadoConsultas = new javax.swing.JButton();
+        btnCargarConsulta = new javax.swing.JButton();
         buscador = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -75,9 +74,6 @@ public class ListadoMascotas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaMascotas);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Datos de Mascotas:");
-
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconeditar.png"))); // NOI18N
         btnEditar.setText("  Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -102,17 +98,17 @@ public class ListadoMascotas extends javax.swing.JFrame {
             }
         });
 
-        btnEliminarrTurno.setText("Ver Mascotas");
-        btnEliminarrTurno.addActionListener(new java.awt.event.ActionListener() {
+        btnListadoConsultas.setText("Listado de Consultas");
+        btnListadoConsultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarrTurnoActionPerformed(evt);
+                btnListadoConsultasActionPerformed(evt);
             }
         });
 
-        btnCargarTurno.setText("Cargar Mascota");
-        btnCargarTurno.addActionListener(new java.awt.event.ActionListener() {
+        btnCargarConsulta.setText("Agregar Consulta");
+        btnCargarConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarTurnoActionPerformed(evt);
+                btnCargarConsultaActionPerformed(evt);
             }
         });
 
@@ -138,45 +134,42 @@ public class ListadoMascotas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(119, 119, 119)
                         .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscar)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCargarTurno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEliminarrTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCargarConsulta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnListadoConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(volverbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(7, 7, 7)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
                     .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCargarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCargarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEliminarrTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnListadoConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(volverbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -198,19 +191,19 @@ public class ListadoMascotas extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(261, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(130, 130, 130))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,7 +217,7 @@ public class ListadoMascotas extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -254,11 +247,11 @@ public class ListadoMascotas extends javax.swing.JFrame {
             this.dispose();
             cargarTabla();
             }else {
-            mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");
+            mostrarMensaje("No selecciono ninguna mascota","error","Error al editar");
             }
             
         }else {
-                mostrarMensaje("No selecciono ninguna mascota","error","Error al eliminar");       
+                mostrarMensaje("No selecciono ninguna mascota","error","Error al editar");       
                    }
        
     }//GEN-LAST:event_btnEditarActionPerformed
@@ -315,13 +308,45 @@ buscador.addFocusListener(new java.awt.event.FocusAdapter() {
         // TODO add your handling code here:
     }//GEN-LAST:event_volverbtnActionPerformed
 
-    private void btnEliminarrTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarrTurnoActionPerformed
+    private void btnListadoConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListadoConsultasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarrTurnoActionPerformed
+    }//GEN-LAST:event_btnListadoConsultasActionPerformed
 
-    private void btnCargarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarTurnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargarTurnoActionPerformed
+    private void btnCargarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarConsultaActionPerformed
+    // Verifico que la tabla no esté vacía:
+    if (tablaMascotas.getRowCount() > 0) {
+        
+        int selectedRow = tablaMascotas.getSelectedRow();
+        
+        if (selectedRow != -1) {  // Verifico que se haya seleccionado una fila
+            
+            // Intento obtener el id de la mascota desde la primera columna
+            String idMascotaStr = String.valueOf(tablaMascotas.getValueAt(selectedRow, 0));
+            try {
+                int idMascota = Integer.parseInt(idMascotaStr);  // Intento convertir a entero
+                System.out.println("ID de la mascota seleccionada: " + idMascota);
+                
+                // Abro la pantalla de consulta
+                CargaConsulta2 pantallaConsulta = new CargaConsulta2(idMascota);
+                pantallaConsulta.setVisible(true);
+                pantallaConsulta.setLocationRelativeTo(null);
+                
+                // Actualizo la tabla
+                //cargarTabla();
+            } catch (NumberFormatException e) {
+                mostrarMensaje("El ID de la mascota no es válido: " + idMascotaStr, "error", "Error al cargar consulta");
+                e.printStackTrace();  // Imprime el error completo
+            }
+            
+        } else {
+            mostrarMensaje("No seleccionó ninguna mascota", "error", "Error al cargar consulta");
+        }
+        
+    } else {
+        mostrarMensaje("La tabla está vacía, no hay mascotas para seleccionar", "error", "Error al cargar consulta");
+    }
+       
+    }//GEN-LAST:event_btnCargarConsultaActionPerformed
 
     private void buscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorActionPerformed
       filtrarTabla();
@@ -361,13 +386,12 @@ buscador.addFocusListener(new java.awt.event.FocusAdapter() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnCargarTurno;
+    private javax.swing.JButton btnCargarConsulta;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnEliminarrTurno;
+    private javax.swing.JButton btnListadoConsultas;
     private javax.swing.JTextField buscador;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -385,7 +409,7 @@ buscador.addFocusListener(new java.awt.event.FocusAdapter() {
         }
     };
 
-    String titulos[] = {"idMascota", "Nombre", "Raza", "Color", "Alergia", "atEspecial", "Observaciones", "Duenio", "Celular Duenio"};
+    String titulos[] = {"idMascota", "Nombre", "Especie", "Raza", "Color", "Alergia", "atEspecial", "Observaciones", "Duenio", "Celular Duenio"};
     tabla.setColumnIdentifiers(titulos);
 
     // Traer los datos de las mascotas desde la controladora
@@ -396,6 +420,7 @@ buscador.addFocusListener(new java.awt.event.FocusAdapter() {
             Object[] objeto = {
                 masco.getIdMascota(),
                 masco.getNombre(),
+                masco.isEspecie(),
                 masco.getRaza(),
                 masco.getColor(),
                 masco.isAlergia(),

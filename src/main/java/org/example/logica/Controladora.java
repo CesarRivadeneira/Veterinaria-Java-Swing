@@ -4,6 +4,7 @@
  */
 package org.example.logica;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.example.persistence.ControladoraPersistencia;
@@ -15,7 +16,7 @@ import org.example.persistence.ControladoraPersistencia;
 public class Controladora {
     ControladoraPersistencia controlPersist = new ControladoraPersistencia();
 
-public void guardar(String nombreMasco, String razaMasco, String colorMasco, 
+public void guardar(String nombreMasco, String especieMasco, String razaMasco, String colorMasco, 
                     String nombreDuenio, String celularDuenio, 
                     String observacionesMasco, String alergico, String atencionEspecial) {
 
@@ -25,6 +26,7 @@ public void guardar(String nombreMasco, String razaMasco, String colorMasco,
 
     Mascota masco = new Mascota();
     masco.setNombre(nombreMasco);
+    masco.setEspecie(especieMasco);
     masco.setRaza(razaMasco);
     masco.setColor(colorMasco);
     masco.setObservaciones(observacionesMasco);
@@ -60,9 +62,10 @@ public void guardar(String nombreMasco, String razaMasco, String colorMasco,
 
     
 
-    public void modificarMascota(Mascota masco, String nombreMasco, String razaMasco, String colorMasco, 
+    public void modificarMascota(Mascota masco, String nombreMasco, String Especie , String razaMasco, String colorMasco, 
             String observacionesMasco, String alergico, String atencionEspecial, String nombreDuenio, String celularDuenio) {
        masco.setNombre(nombreMasco);
+       masco.setEspecie(Especie);
        masco.setRaza(razaMasco);
        masco.setColor(colorMasco);
        masco.setObservaciones(observacionesMasco);
@@ -110,6 +113,33 @@ public void guardar(String nombreMasco, String razaMasco, String colorMasco,
         return controlPersist.traerDuenio(idDuenio) ;
     }
 
+    public List<String> buscarDueniosPorNombre(String texto) {
+        
     
+       List<String> sugerencias = new ArrayList<>();
     
+    for (Duenio d : controlPersist.traerDuenios()) {
+        if (d.getNombre().toLowerCase().startsWith(texto.toLowerCase())) {
+            sugerencias.add(d.getNombre());
+        }
+    }
+
+    return sugerencias;   
+}
+ public void guardarConsulta(Mascota masco, String nombreMasco, String motivoConsulta, String diagnosticoConsulta, String tratamientoConsulta) {
+   
+     Consulta consul = new Consulta();
+     consul.setFechaConsulta(LocalDate.now());
+     consul.setMotivoConsulta(motivoConsulta);
+     consul.setDiagnosticoConsulta(diagnosticoConsulta);
+     consul.setTratamientoConsulta(tratamientoConsulta);
+     consul.setObservacionesConsulta(tratamientoConsulta);
+     
+     controlPersist.guardarConsulta(consul);
+     masco.getConsultas().add(consul);
+     
+    controlPersist.modificarMascota(masco);
+     
+ }
+
 }

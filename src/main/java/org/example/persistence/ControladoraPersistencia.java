@@ -8,6 +8,7 @@ import static com.mysql.cj.conf.PropertyKey.logger;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.example.logica.Consulta;
 import org.example.logica.Duenio;
 import org.example.logica.Mascota;
 import org.example.persistence.exceptions.NonexistentEntityException;
@@ -19,6 +20,7 @@ import org.example.persistence.exceptions.NonexistentEntityException;
 public class ControladoraPersistencia {
     DuenioJpaController dueniojpa = new DuenioJpaController();
     MascotaJpaController mascotajpa = new MascotaJpaController();
+    ConsultaJpaController consultajpa = new ConsultaJpaController();
     
     public void guardar(Duenio duenio){
     
@@ -49,6 +51,8 @@ public class ControladoraPersistencia {
       }catch(Exception ex){
       Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
       }
+      
+   
         
       
     }
@@ -78,6 +82,10 @@ public class ControladoraPersistencia {
         }catch(Exception ex){
         Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void guardarConsulta(Consulta consul) {
+        consultajpa.create(consul);
     }
 
    
